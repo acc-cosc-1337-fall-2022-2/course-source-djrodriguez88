@@ -1,4 +1,7 @@
 //write include statement for if_else header file
+#include"if_else_if.h"
+
+using std::string;
 
 //write code for function named get_generation that accepts an int year and returns
 //a string, apply the following logic:
@@ -8,4 +11,21 @@
 //return "Baby boomer" when year greater than equal to 1946 to 1964
 //return "Silent Generation" when year greater than equal 1925 and less than equal 1945
 //return "Invalid Year" otherwise
+
+std::string get_generation(int year)
+{
+    string generation;
+
+    if (year >= 1996 && year <= 2014) 
+    {
+        generation = "Centenial";
+    }
+
+    else if (year >=1977 && year <= 1995)
+    {
+        generation = "Millenial";
+    }
+
+    return generation;
+}
 
