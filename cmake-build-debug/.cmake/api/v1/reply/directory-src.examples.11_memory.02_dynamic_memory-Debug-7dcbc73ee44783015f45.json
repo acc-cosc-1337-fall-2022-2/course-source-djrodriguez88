@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/examples/11_memory/02_dynamic_memory",
+		"source" : "src/examples/11_memory/02_dynamic_memory"
+	}
+}

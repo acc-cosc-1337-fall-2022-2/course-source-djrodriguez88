@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/examples/07_vector/03_for_ranged",
+		"source" : "src/examples/07_vector/03_for_ranged"
+	}
+}

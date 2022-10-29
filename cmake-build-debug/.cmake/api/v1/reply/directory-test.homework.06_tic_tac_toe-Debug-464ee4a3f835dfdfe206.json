@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "test/homework/06_tic_tac_toe",
+		"source" : "test/homework/06_tic_tac_toe"
+	}
+}

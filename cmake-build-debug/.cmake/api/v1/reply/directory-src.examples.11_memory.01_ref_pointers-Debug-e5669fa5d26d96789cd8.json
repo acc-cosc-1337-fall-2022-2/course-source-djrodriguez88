@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/examples/11_memory/01_ref_pointers",
+		"source" : "src/examples/11_memory/01_ref_pointers"
+	}
+}

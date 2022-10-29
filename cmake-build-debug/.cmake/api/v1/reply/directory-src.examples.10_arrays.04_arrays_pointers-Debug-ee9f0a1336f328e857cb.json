@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/examples/10_arrays/04_arrays_pointers",
+		"source" : "src/examples/10_arrays/04_arrays_pointers"
+	}
+}

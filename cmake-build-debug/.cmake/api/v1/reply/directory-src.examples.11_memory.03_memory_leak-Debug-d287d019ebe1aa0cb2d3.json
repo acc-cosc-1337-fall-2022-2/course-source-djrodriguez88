@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/examples/11_memory/03_memory_leak",
+		"source" : "src/examples/11_memory/03_memory_leak"
+	}
+}

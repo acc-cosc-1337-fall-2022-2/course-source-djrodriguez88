@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/examples/11_memory/04_dangling_pointer",
+		"source" : "src/examples/11_memory/04_dangling_pointer"
+	}
+}

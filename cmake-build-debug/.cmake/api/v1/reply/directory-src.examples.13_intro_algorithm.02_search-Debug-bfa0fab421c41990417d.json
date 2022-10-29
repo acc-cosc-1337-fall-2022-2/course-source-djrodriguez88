@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/examples/13_intro_algorithm/02_search",
+		"source" : "src/examples/13_intro_algorithm/02_search"
+	}
+}
