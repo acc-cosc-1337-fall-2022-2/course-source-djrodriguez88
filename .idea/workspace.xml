@@ -20,13 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="645fd8f6-1248-49d9-a495-270551e0bf2a" name="Changes" comment="test">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/homework/06_tic_tac_toe/tic_tac_toe.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/homework/06_tic_tac_toe/tic_tac_toe.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/homework/06_tic_tac_toe/tic_tac_toe.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/homework/06_tic_tac_toe/tic_tac_toe.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/homework/06_tic_tac_toe/tic_tac_toe_tests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/homework/06_tic_tac_toe/tic_tac_toe_tests.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="645fd8f6-1248-49d9-a495-270551e0bf2a" name="Changes" comment="Unable to test in HW branch, uploading to merge with master" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,7 +142,7 @@
       <workItem from="1667080226297" duration="3275000" />
       <workItem from="1667083549379" duration="260000" />
       <workItem from="1667083824339" duration="1000" />
-      <workItem from="1667097284094" duration="132000" />
+      <workItem from="1667097284094" duration="449000" />
     </task>
     <task id="LOCAL-00001" summary="Bank account examples">
       <created>1667080674919</created>
@@ -164,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667082114947</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Unable to test in HW branch, uploading to merge with master">
+      <created>1667097716557</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667097716557</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +184,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Bank account examples" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bank account examples" />
+    <MESSAGE value="Unable to test in HW branch, uploading to merge with master" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unable to test in HW branch, uploading to merge with master" />
   </component>
 </project>
