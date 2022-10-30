@@ -7,16 +7,17 @@ using std::count;
 //public functions
 
 void TicTacToe::start_game(string first_player) {
-    cout << "Player 1: Please choose X or O to begin\n";
-    cin >> first_player;
     if (first_player == "X" || first_player == "O") {
         player = first_player;
-    } else {
-        cout << "Invalid Input. Please choose 'X' or 'O' to begin\n";
-        cin >> first_player;
-        player = first_player;
     }
-    clear_board();
+    else {
+        do {
+            cout << "Invalid Input. Please choose 'X' or 'O' to begin\n";
+            cin >> first_player;
+            player = first_player;
+        }while (first_player != "X" && first_player != "O");
+    }
+    TicTacToe::clear_board();
 }
 
 string TicTacToe::get_player() const{return player;}

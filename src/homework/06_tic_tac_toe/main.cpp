@@ -16,6 +16,9 @@ int main()
 
     cout << "Tic Tac Toe! 3 in a row!\n";
 
+    cout << "Player 1: Please choose X or O to begin\n";
+    cin >> first_player;
+
     game.start_game(first_player);
     how_to_play();
 
@@ -38,6 +41,8 @@ int main()
         cin >> contPlay;
         if(contPlay == 1)
         {
+            cout << "Player 1: Please choose X or O to begin\n";
+            cin >> first_player;
             game.start_game(first_player);
         }
     }
