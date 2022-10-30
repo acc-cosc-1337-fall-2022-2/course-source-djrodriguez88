@@ -88,6 +88,5 @@ void TicTacToe::clear_board()
 void how_to_play()
 {
     cout << "\nEnter a Valid Board Position->|\n";
-    cout << "1|2|3 <---------------<|\n";
-    cout << "4|5|6\n7|8|9\n";
+    cout << "1|2|3\n""4|5|6\n7|8|9\n";
 }

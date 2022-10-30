@@ -10,9 +10,8 @@ int main()
     TicTacToe game;
 
     string first_player;
-    int
-            position,
-            contPlay = 1;
+    int position;
+    int contPlay = 1;
 
 
     cout << "Tic Tac Toe! 3 in a row!\n";
