@@ -31,7 +31,7 @@ bool TicTacToe::game_over()
         set_winner();
         return true;
     }
-    if(check_column_win()||check_row_win()||check_diagonal_win())
+    if(check_column_win() == true||check_row_win()||check_diagonal_win())
     {
         set_winner();
         return true;
@@ -105,82 +105,90 @@ string TicTacToe::get_winner() const
 
 bool TicTacToe::check_column_win()
 {
-    if(pegs[0] == "X" or "O")
+    bool check = false;
+    if(pegs[0] == "X" || pegs[0] == "O") {
+        if (pegs[0] == pegs[3] && pegs[0] == pegs[6]) {
+            set_winner();
+            check = true;
+            return check;
+        }
+    }
+    if(pegs[1] == "X" || pegs[1] == "O")
     {
-        if(pegs[0] == pegs[3] && pegs[0] == pegs[6])
-            {
-                set_winner();
-                return true;
-            }
-    else if(pegs[1] == "X" or "O")
-        {
         if(pegs[1] == pegs[4] && pegs[1] == pegs[7])
             {
                 set_winner();
-                return true;
+                check = true;
+                return check;
             }
-        }
-    else if(pegs[3] == "X" or "O")
+    }
+    if(pegs[2] == "X" || pegs[2] == "O")
     {
-        if(pegs[3] == pegs[6] && pegs[3] == pegs[9])
+        if(pegs[2] == pegs[5] && pegs[2] == pegs[8])
             {
                 set_winner();
-                return true;
+                check = true;
+                return check;
             }
     }
-    else return false;
-    }
+    return check;
+
 }
 
 bool TicTacToe::check_row_win()
 {
-    if(pegs[0] == "X" or "O") {
+    bool check = false;
+    if(pegs[0] == "X" || pegs[0] == "O") {
         if (pegs[0] == pegs[1] && pegs[0] == pegs[2]) {
             set_winner();
-            return true;
+            check = true;
+            return check;
         }
     }
-    else if(pegs[3] == "X" or "O"){
+    if(pegs[3] == "X" || pegs[3] == "O")
+    {
         if(pegs[3] == pegs[4] && pegs[3] == pegs[5])
-            {
-                set_winner();
-                return true;
-            }
+        {
+            set_winner();
+            check = true;
+            return check;
+        }
     }
-    else if(pegs[6] == "X" or "O"){
+    if(pegs[6] == "X" || pegs[6] == "O")
+    {
         if(pegs[6] == pegs[7] && pegs[6] == pegs[8])
-            {
-                set_winner();
-                return true;
-            }
+        {
+            set_winner();
+            check = true;
+            return check;
+        }
     }
-    else return false;
+    return check;
+
 }
 
 
 bool TicTacToe::check_diagonal_win()
 {
-    if(pegs[0] == "X" or "O") {
-        if (pegs[0] == pegs[1] && pegs[0] == pegs[2]) {
+    bool check = false;
+    if(pegs[0] == "X" || pegs[0] == "O") {
+        if (pegs[0] == pegs[4] && pegs[0] == pegs[8]) {
             set_winner();
-            return true;
+            check = true;
+            return check;
         }
     }
-    else if(pegs[3] == "X" or "O"){
-        if(pegs[3] == pegs[4] && pegs[3] == pegs[5])
+    if(pegs[6] == "X" || pegs[6] == "O")
+    {
+        if(pegs[6] == pegs[4] && pegs[6] == pegs[2])
         {
             set_winner();
-            return true;
+            check = true;
+            return check;
         }
     }
-    else if(pegs[6] == "X" or "O"){
-        if(pegs[6] == pegs[7] && pegs[6] == pegs[8])
-        {
-            set_winner();
-            return true;
-        }
-    }
-    else return false;
+    return check;
+
 }
 
 void TicTacToe::set_winner()

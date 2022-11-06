@@ -37,6 +37,14 @@ int main()
         game.game_over();
         game.display_board();
 
+        if (game.get_winner() == "C")
+        {
+            cout << "\nThe game has ended in a draw! Settle the score and play another round!\n";
+        }
+        else
+        {
+            cout << "The Winner of the game is " << game.get_winner() << "!\n";
+        }
         cout << "Would you like to play again?\nPress 1: Yes\nPress 0: No\n";
         cin >> contPlay;
         if(contPlay == 1)
