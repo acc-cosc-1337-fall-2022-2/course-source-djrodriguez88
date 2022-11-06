@@ -26,7 +26,17 @@ string TicTacToe::get_player() const{return player;}
 
 bool TicTacToe::game_over()
 {
-    return check_board_full();
+    if(check_board_full())
+    {
+        set_winner();
+        return true;
+    }
+    if(check_column_win()||check_row_win()||check_diagonal_win())
+    {
+        set_winner();
+        return true;
+    }
+    else return false;
 }
 
 void TicTacToe::mark_board(int position)
@@ -84,6 +94,107 @@ void TicTacToe::clear_board()
         peg = " ";
     }
 }
+
+string TicTacToe::get_winner() const
+{
+    return winner;
+}
+
+//Homework 7 Private Functions
+
+
+bool TicTacToe::check_column_win()
+{
+    if(pegs[0] == "X" or "O")
+    {
+        if(pegs[0] == pegs[3] && pegs[0] == pegs[6])
+            {
+                set_winner();
+                return true;
+            }
+    else if(pegs[1] == "X" or "O")
+        {
+        if(pegs[1] == pegs[4] && pegs[1] == pegs[7])
+            {
+                set_winner();
+                return true;
+            }
+        }
+    else if(pegs[3] == "X" or "O")
+    {
+        if(pegs[3] == pegs[6] && pegs[3] == pegs[9])
+            {
+                set_winner();
+                return true;
+            }
+    }
+    else return false;
+    }
+}
+
+bool TicTacToe::check_row_win()
+{
+    if(pegs[0] == "X" or "O") {
+        if (pegs[0] == pegs[1] && pegs[0] == pegs[2]) {
+            set_winner();
+            return true;
+        }
+    }
+    else if(pegs[3] == "X" or "O"){
+        if(pegs[3] == pegs[4] && pegs[3] == pegs[5])
+            {
+                set_winner();
+                return true;
+            }
+    }
+    else if(pegs[6] == "X" or "O"){
+        if(pegs[6] == pegs[7] && pegs[6] == pegs[8])
+            {
+                set_winner();
+                return true;
+            }
+    }
+    else return false;
+}
+
+
+bool TicTacToe::check_diagonal_win()
+{
+    if(pegs[0] == "X" or "O") {
+        if (pegs[0] == pegs[1] && pegs[0] == pegs[2]) {
+            set_winner();
+            return true;
+        }
+    }
+    else if(pegs[3] == "X" or "O"){
+        if(pegs[3] == pegs[4] && pegs[3] == pegs[5])
+        {
+            set_winner();
+            return true;
+        }
+    }
+    else if(pegs[6] == "X" or "O"){
+        if(pegs[6] == pegs[7] && pegs[6] == pegs[8])
+        {
+            set_winner();
+            return true;
+        }
+    }
+    else return false;
+}
+
+void TicTacToe::set_winner()
+{
+    if (player == "X")
+    {winner = "O";}
+    else{winner = "X";}
+
+    if(check_board_full())
+    {
+        winner = "C";
+    }
+}
+
 
 //Tutorial function
 void how_to_play()
