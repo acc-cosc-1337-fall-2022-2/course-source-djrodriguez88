@@ -38,7 +38,22 @@ private:
 
 };
 
+
+class TicTacToeManager{
+
+public:
+
+
+private:
+    int o_wins = 0;
+    int x_wins = 0;
+    int ties = 0;
+
+};
+
 //Other/tutorial function
 void how_to_play();
+
+
 
 #endif
