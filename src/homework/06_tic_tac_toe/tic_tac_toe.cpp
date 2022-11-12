@@ -63,6 +63,17 @@ void TicTacToe::display_board() const
     cout << '\n';
 }
 
+//Homework 8 Public Functions
+void TicTacToe::save_game(TicTacToe b)
+{
+
+}
+
+void TicTacToe::get_winner_total(int& o, int& w int& t)
+{
+
+}
+
 
 //private functions
 
@@ -201,6 +212,18 @@ void TicTacToe::set_winner()
     {
         winner = "C";
     }
+}
+
+//Homework 8 Private function
+
+void TicTacToeManager::update_winner_count(string winner)
+{
+    if(winner == "X")
+        {& x_wins++;}
+    else if(winner == "O")
+        {& o_wins++;}
+    else()
+        {& ties++;}
 }
 
 

@@ -35,19 +35,23 @@ private:
     bool check_diagonal_win();
     void set_winner();
 
-
 };
 
 
 class TicTacToeManager{
 
 public:
-
+    void save_game(TicTacToe b);
+    std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager);
+    void get_winner_total(int& o, int& w int& t);
 
 private:
+    vector<TicTacToe> games{};
     int o_wins = 0;
     int x_wins = 0;
     int ties = 0;
+
+    void update_winner_count(string winner);
 
 };
 
