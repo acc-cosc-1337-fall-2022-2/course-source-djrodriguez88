@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -6,9 +6,12 @@
 #ifndef TicTacToe_h
 #define TicTacToe_h
 
-using std::string;
-using std::vector;
-using std::count;
+using
+        std::ostream,
+        std::istream,
+        std::string,
+        std::vector;
+
 
 class TicTacToe{
 
@@ -16,8 +19,11 @@ public:
     bool game_over();
     void start_game(string first_player);
     void mark_board(int position);
+    void how_to_play();
     string get_player() const;
-    void display_board() const;
+
+    friend ostream& operator<<(ostream& out, const TicTacToe& game);
+    friend istream& operator>>(istream& in, TicTacToe& game);
 
     string get_winner() const;
 
@@ -36,28 +42,5 @@ private:
     void set_winner();
 
 };
-
-
-class TicTacToeManager{
-
-public:
-    void save_game(TicTacToe b);
-    std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager);
-    void get_winner_total(int& o, int& w int& t);
-
-private:
-    vector<TicTacToe> games{};
-    int o_wins = 0;
-    int x_wins = 0;
-    int ties = 0;
-
-    void update_winner_count(string winner);
-
-};
-
-//Other/tutorial function
-void how_to_play();
-
-
 
 #endif

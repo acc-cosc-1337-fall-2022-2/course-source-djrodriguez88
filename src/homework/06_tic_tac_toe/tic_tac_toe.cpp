@@ -45,35 +45,6 @@ void TicTacToe::mark_board(int position)
     set_next_player();
 }
 
-void TicTacToe::display_board() const
-{
-
-    for(int i = 0; i < pegs.size(); i++)
-    {
-        cout << pegs[i];
-        if(i == 2 || i == 5 || i == 8)
-        {
-            cout << '\n';
-        }
-        else
-        {
-            cout << "|";
-        }
-    }
-    cout << '\n';
-}
-
-//Homework 8 Public Functions
-void TicTacToe::save_game(TicTacToe b)
-{
-
-}
-
-void TicTacToe::get_winner_total(int& o, int& w int& t)
-{
-
-}
-
 
 //private functions
 
@@ -214,22 +185,45 @@ void TicTacToe::set_winner()
     }
 }
 
-//Homework 8 Private function
-
-void TicTacToeManager::update_winner_count(string winner)
-{
-    if(winner == "X")
-        {& x_wins++;}
-    else if(winner == "O")
-        {& o_wins++;}
-    else()
-        {& ties++;}
-}
-
-
 //Tutorial function
-void how_to_play()
+void TicTacToe::how_to_play()
 {
     cout << "\nEnter a Valid Board Position->|\n";
     cout << "1|2|3\n""4|5|6\n7|8|9\n";
 }
+
+
+
+ostream &operator << (ostream &out, const TicTacToe &game)
+{
+
+    for(int i = 0; i < game.pegs.size(); i++)
+    {
+        out << game.pegs[i];
+        if (i == 2 || i == 5 || i == 8)
+        {
+            out << '\n';
+        }
+        else
+        {
+            out << '|';
+        }
+    }
+
+    return out;
+}
+
+istream &operator>>(istream &in, TicTacToe &game)
+{
+    int position;
+
+    cout << "Player \'" << game.get_player() << "\' take your turn (Choose position on board)\n";
+    cin >> position;
+    game.mark_board(position);
+
+    return in;
+
+}
+
+
+
