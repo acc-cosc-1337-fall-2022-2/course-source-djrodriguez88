@@ -21,6 +21,8 @@ public:
     void mark_board(int position);
     void how_to_play();
     string get_player() const;
+    int size;
+    TicTacToe(int size);
 
     friend ostream& operator<<(ostream& out, const TicTacToe& game);
     friend istream& operator>>(istream& in, TicTacToe& game);
@@ -30,16 +32,21 @@ public:
 private:
     string player;
     string winner;
-    vector<string> pegs{" "," "," "," "," "," "," "," "," "};
+   // vector<string> pegs{" "," "," "," "," "," "," "," "," "};
 
     void set_next_player();
     bool check_board_full();
     void clear_board();
 
+
+    void set_winner();
+
+protected:
+    vector<string> pegs{size * size, " "};
     bool check_column_win();
     bool check_row_win();
     bool check_diagonal_win();
-    void set_winner();
+
 
 };
 

@@ -1,16 +1,20 @@
+#include <iostream>
 #include "tic_tac_toe.h"
 #include "tic_tac_toe_manager.h"
-#include <iostream>
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 
 using
 std::cout,
 std::cin;
+std::make_unique;
+std::unique_ptr
 
 
 int main()
 {
 //Initialize variables
-    TicTacToe game;
+    unique_ptr<TicTacToe> game;
     TicTacToeManager manager;
 
     string first_player;
