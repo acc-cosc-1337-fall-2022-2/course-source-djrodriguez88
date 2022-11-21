@@ -1,8 +1,8 @@
 //h
 #include "tic_tac_toe.h"
 
-#ifndef TicTacToe4_H
-#define TicTacToe4_H
+#ifndef TicTacToe4_h
+#define TicTacToe4_h
 
 class TicTacToe4: public TicTacToe
 {

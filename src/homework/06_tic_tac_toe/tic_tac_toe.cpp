@@ -26,16 +26,17 @@ string TicTacToe::get_player() const{return player;}
 
 bool TicTacToe::game_over()
 {
+    if(check_column_win()||check_row_win()||check_diagonal_win())
+    {
+        set_winner();
+        return true;
+    }
     if(check_board_full())
     {
         set_winner();
         return true;
     }
-    else if(check_column_win()||check_row_win()||check_diagonal_win())
-    {
-        set_winner();
-        return true;
-    }
+
     else return false;
 }
 
