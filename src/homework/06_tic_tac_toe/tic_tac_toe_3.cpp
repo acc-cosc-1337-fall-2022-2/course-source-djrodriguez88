@@ -17,27 +17,21 @@ bool TicTacToe3::check_column_win()
     bool check = false;
     if(pegs[0] == "X" || pegs[0] == "O") {
         if (pegs[0] == pegs[3] && pegs[0] == pegs[6]) {
-            set_winner();
             check = true;
-            return check;
         }
     }
     if(pegs[1] == "X" || pegs[1] == "O")
     {
         if(pegs[1] == pegs[4] && pegs[1] == pegs[7])
         {
-            set_winner();
             check = true;
-            return check;
         }
     }
     if(pegs[2] == "X" || pegs[2] == "O")
     {
         if(pegs[2] == pegs[5] && pegs[2] == pegs[8])
         {
-            set_winner();
             check = true;
-            return check;
         }
     }
     return check;
@@ -59,27 +53,21 @@ bool TicTacToe3::check_row_win()
     bool check = false;
     if(pegs[0] == "X" || pegs[0] == "O") {
         if (pegs[0] == pegs[1] && pegs[0] == pegs[2]) {
-            set_winner();
             check = true;
-            return check;
         }
     }
     if(pegs[3] == "X" || pegs[3] == "O")
     {
         if(pegs[3] == pegs[4] && pegs[3] == pegs[5])
         {
-            set_winner();
             check = true;
-            return check;
         }
     }
     if(pegs[6] == "X" || pegs[6] == "O")
     {
         if(pegs[6] == pegs[7] && pegs[6] == pegs[8])
         {
-            set_winner();
             check = true;
-            return check;
         }
     }
     return check;
@@ -100,18 +88,14 @@ bool TicTacToe3::check_diagonal_win()
     bool check = false;
     if(pegs[0] == "X" || pegs[0] == "O") {
         if (pegs[0] == pegs[4] && pegs[0] == pegs[8]) {
-            set_winner();
             check = true;
-            return check;
         }
     }
     if(pegs[6] == "X" || pegs[6] == "O")
     {
         if(pegs[6] == pegs[4] && pegs[6] == pegs[2])
         {
-            set_winner();
             check = true;
-            return check;
         }
     }
     return check;

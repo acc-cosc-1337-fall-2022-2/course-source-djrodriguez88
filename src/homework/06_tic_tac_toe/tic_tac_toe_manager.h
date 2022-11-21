@@ -5,28 +5,29 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <memory>
 
 #ifndef TicTacToeManager_H
 #define TicTacToeManager_h
 
 using
-        std::cout,
-        std::cin,
         std::ostream,
         std::istream,
         std::string,
         std::vector;
+using std::unique_ptr;
 
 class TicTacToeManager
 {
 public:
     friend ostream& operator << (ostream& out, const TicTacToeManager& manager);
     void get_winner_totals(int& x, int& o, int& t);
-    void save_game(TicTacToe b);
+    void save_game(unique_ptr<TicTacToe>& b);
+
 
 
 private:
-    vector<TicTacToe> games;
+    vector <unique_ptr<TicTacToe>> games;
     int
     x_wins = {0},
     o_wins = {0},

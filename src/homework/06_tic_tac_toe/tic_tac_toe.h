@@ -29,6 +29,7 @@ public:
 
     string get_winner() const;
 
+
 private:
     string player;
     string winner;
@@ -42,7 +43,7 @@ private:
     void set_winner();
 
 protected:
-    vector<string> pegs{size * size, " "};
+    vector<string> pegs;
     bool check_column_win();
     bool check_row_win();
     bool check_diagonal_win();
