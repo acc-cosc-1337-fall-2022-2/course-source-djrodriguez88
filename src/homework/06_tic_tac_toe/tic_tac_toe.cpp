@@ -4,8 +4,9 @@ using std::string;
 using std::cout;
 using std::cin;
 using std::count;
-//public functions
 
+
+//public functions
 void TicTacToe::start_game(string first_player) {
     if (first_player == "X" || first_player == "O") {
         player = first_player;
@@ -22,7 +23,17 @@ void TicTacToe::start_game(string first_player) {
 
 string TicTacToe::get_player() const{return player;}
 
+void TicTacToe::set_winner()
+{
+    if (player == "X")
+    {winner = "O";}
+    else{winner = "X";}
 
+    if(check_board_full())
+    {
+        winner = "C";
+    }
+}
 
 bool TicTacToe::game_over()
 {
@@ -82,6 +93,7 @@ string TicTacToe::get_winner() const
 {
     return winner;
 }
+
 
 //Homework 7 Private Functions
 

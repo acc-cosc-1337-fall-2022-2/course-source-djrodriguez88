@@ -19,16 +19,10 @@ int main()
     string first_player;
     int contPlay = 1;
 
-
 //Start game loop
-
     while(contPlay == 1)
     {
-        cout << "Tic Tac Toe! 3 or 4 in a row!\n";
-        cout << "Player 1: Please choose X or O to begin\n";
-        cin >> first_player;
- //       game.how_to_play();
-
+        //Game Selection
         string game_selection;
         do
         {
@@ -41,10 +35,16 @@ int main()
         {
             game = std::make_unique<TicTacToe3>();
         }
-        else
+        else if(game_selection == "4")
         {
             game = std::make_unique<TicTacToe4>();
         }
+
+        cout << "Tic Tac Toe! 3 or 4 in a row!\n";
+        cout << "Player 1: Please choose X or O to begin\n";
+        cin >> first_player;
+ //       game.how_to_play();
+
 
         game->start_game(first_player);
 
@@ -56,6 +56,7 @@ int main()
         while (!game->game_over());
         game->game_over();
         cout << *game;
+
         manager.save_game(game);
 
         if (game->get_winner() == "C")
