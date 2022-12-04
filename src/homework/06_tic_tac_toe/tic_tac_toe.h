@@ -47,9 +47,9 @@ private:
 
 protected:
     vector<string> pegs;
-    bool check_column_win();
-    bool check_row_win();
-    bool check_diagonal_win();
+    virtual bool check_column_win();
+    virtual bool check_row_win();
+    virtual bool check_diagonal_win();
 
 
 };

@@ -54,6 +54,8 @@ TEST_CASE("Test game over if 9 slots are selected.")
     REQUIRE(game->get_winner() == "C");
 }
 
+//3x3 Test Cases
+
 TEST_CASE("Test win by first column.")
 {
     unique_ptr<TicTacToe> game = make_unique<TicTacToe3>();
@@ -273,6 +275,430 @@ TEST_CASE("TicTacToeManager class with 3 games - Check Winner")
     game3->mark_board(8);
     game3->game_over();
     game3->mark_board(9);
+
+    game3->game_over();
+    manager.save_game(game3);
+
+    manager.get_winner_totals(x_wins, o_wins, ties);
+
+    REQUIRE(x_wins == 1);
+    REQUIRE(o_wins == 1);
+    REQUIRE(ties == 1);
+
+}
+
+//4x4 Test Cases
+
+TEST_CASE("Test game over if 16 slots are selected")
+{
+    unique_ptr<TicTacToe> game = make_unique<TicTacToe4>();
+    string first_player = "X";
+    game->start_game(first_player);
+
+    game->mark_board(1);
+    game->game_over();
+    game->mark_board(2);
+    game->game_over();
+    game->mark_board(3);
+    game->game_over();
+    game->mark_board(4);
+    game->game_over();
+    game->mark_board(6);
+    game->game_over();
+    game->mark_board(5);
+    game->game_over();
+    game->mark_board(7);
+    game->game_over();
+    game->mark_board(10);
+    game->game_over();
+    game->mark_board(8);
+    game->game_over();
+    game->mark_board(12);
+    game->game_over();
+    game->mark_board(9);
+    game->game_over();
+    game->mark_board(13);
+    game->game_over();
+    game->mark_board(11);
+    game->game_over();
+    game->mark_board(15);
+    game->game_over();
+    game->mark_board(14);
+    game->game_over();
+    game->mark_board(16);
+    game->game_over();
+
+    string winner = game->get_winner();
+
+    REQUIRE(winner == "C");
+}
+/*
+0, 1,  2,  3
+4, 5,  6,  7
+8, 9, 10, 11
+12,13,14, 15
+*/
+TEST_CASE("Test win by first column 4x4")
+{
+    unique_ptr<TicTacToe> game = make_unique<TicTacToe4>();
+    string first_player = "X";
+    game->start_game(first_player);
+
+    game->mark_board(1);
+    game->game_over();
+    game->mark_board(2);
+    game->game_over();
+    game->mark_board(5);
+    game->game_over();
+    game->mark_board(3);
+    game->game_over();
+    game->mark_board(9);
+    game->game_over();
+    game->mark_board(4);
+    game->game_over();
+    game->mark_board(13);
+    game->game_over();
+
+    string winner = game->get_winner();
+
+    REQUIRE(game->game_over() == true);
+    REQUIRE(winner == "X");
+}
+
+
+TEST_CASE("Test win by second column 4x4")
+{
+    unique_ptr<TicTacToe> game = make_unique<TicTacToe4>();
+    string first_player = "X";
+    game->start_game(first_player);
+
+    game->mark_board(2);
+    game->game_over();
+    game->mark_board(1);
+    game->game_over();
+    game->mark_board(6);
+    game->game_over();
+    game->mark_board(3);
+    game->game_over();
+    game->mark_board(10);
+    game->game_over();
+    game->mark_board(4);
+    game->game_over();
+    game->mark_board(14);
+    game->game_over();
+
+    string winner = game->get_winner();
+
+    REQUIRE(game->game_over() == true);
+    REQUIRE(winner == "X");
+}
+
+
+
+TEST_CASE("Test win by third column 4x4")
+{
+    unique_ptr<TicTacToe> game = make_unique<TicTacToe4>();
+    string first_player = "X";
+    game->start_game(first_player);
+
+    game->mark_board(3);
+    game->game_over();
+    game->mark_board(1);
+    game->game_over();
+    game->mark_board(7);
+    game->game_over();
+    game->mark_board(2);
+    game->game_over();
+    game->mark_board(11);
+    game->game_over();
+    game->mark_board(4);
+    game->game_over();
+    game->mark_board(15);
+    game->game_over();
+
+    string winner = game->get_winner();
+
+    REQUIRE(game->game_over() == true);
+    REQUIRE(winner == "X");
+}
+
+TEST_CASE("Test win by fourth column 4x4")
+{
+    unique_ptr<TicTacToe> game = make_unique<TicTacToe4>();
+    string first_player = "X";
+    game->start_game(first_player);
+
+    game->mark_board(4);
+    game->game_over();
+    game->mark_board(1);
+    game->game_over();
+    game->mark_board(8);
+    game->game_over();
+    game->mark_board(2);
+    game->game_over();
+    game->mark_board(12);
+    game->game_over();
+    game->mark_board(3);
+    game->game_over();
+    game->mark_board(16);
+    game->game_over();
+
+    string winner = game->get_winner();
+
+    REQUIRE(game->game_over() == true);
+    REQUIRE(winner == "X");
+}
+
+
+TEST_CASE("Test win by first row 4x4")
+{
+    unique_ptr<TicTacToe> game = make_unique<TicTacToe4>();
+    string first_player = "X";
+    game->start_game(first_player);
+
+    game->mark_board(1);
+    game->game_over();
+    game->mark_board(5);
+    game->game_over();
+    game->mark_board(2);
+    game->game_over();
+    game->mark_board(6);
+    game->game_over();
+    game->mark_board(3);
+    game->game_over();
+    game->mark_board(7);
+    game->game_over();
+    game->mark_board(4);
+    game->game_over();
+
+    string winner = game->get_winner();
+
+    REQUIRE(game->game_over() == true);
+    REQUIRE(winner == "X");
+}
+
+TEST_CASE("Test win by second row 4x4")
+{
+    unique_ptr<TicTacToe> game = make_unique<TicTacToe4>();
+    string first_player = "X";
+    game->start_game(first_player);
+
+    game->mark_board(5);
+    game->game_over();
+    game->mark_board(1);
+    game->game_over();
+    game->mark_board(6);
+    game->game_over();
+    game->mark_board(2);
+    game->game_over();
+    game->mark_board(7);
+    game->game_over();
+    game->mark_board(3);
+    game->game_over();
+    game->mark_board(8);
+    game->game_over();
+
+    string winner = game->get_winner();
+
+    REQUIRE(game->game_over() == true);
+    REQUIRE(winner == "X");
+}
+
+TEST_CASE("Test win by third row 4x4")
+{
+    unique_ptr<TicTacToe> game = make_unique<TicTacToe4>();
+    string first_player = "X";
+    game->start_game(first_player);
+
+    game->mark_board(9);
+    game->game_over();
+    game->mark_board(1);
+    game->game_over();
+    game->mark_board(10);
+    game->game_over();
+    game->mark_board(2);
+    game->game_over();
+    game->mark_board(11);
+    game->game_over();
+    game->mark_board(3);
+    game->game_over();
+    game->mark_board(12);
+    game->game_over();
+
+    string winner = game->get_winner();
+
+    REQUIRE(game->game_over() == true);
+    REQUIRE(winner == "X");
+}
+
+
+TEST_CASE("Test win by fourth row 4x4")
+{
+    unique_ptr<TicTacToe> game = make_unique<TicTacToe4>();
+    string first_player = "X";
+    game->start_game(first_player);
+
+    game->mark_board(13);
+    game->game_over();
+    game->mark_board(1);
+    game->game_over();
+    game->mark_board(14);
+    game->game_over();
+    game->mark_board(2);
+    game->game_over();
+    game->mark_board(15);
+    game->game_over();
+    game->mark_board(3);
+    game->game_over();
+    game->mark_board(16);
+    game->game_over();
+
+    string winner = game->get_winner();
+
+    REQUIRE(game->game_over() == true);
+    REQUIRE(winner == "X");
+}
+
+TEST_CASE("Test win diagonally from top left 4x4")
+{
+    unique_ptr<TicTacToe> game = make_unique<TicTacToe4>();
+    string first_player = "X";
+    game->start_game(first_player);
+
+    game->mark_board(1);
+    game->game_over();
+    game->mark_board(2);
+    game->game_over();
+    game->mark_board(6);
+    game->game_over();
+    game->mark_board(3);
+    game->game_over();
+    game->mark_board(11);
+    game->game_over();
+    game->mark_board(4);
+    game->game_over();
+    game->mark_board(16);
+    game->game_over();
+
+    string winner = game->get_winner();
+
+    REQUIRE(game->game_over() == true);
+    REQUIRE(winner == "X");
+}
+
+TEST_CASE("Test win diagonally from bottom left 4x4")
+{
+    unique_ptr<TicTacToe> game = make_unique<TicTacToe4>();
+    string first_player = "X";
+    game->start_game(first_player);
+
+    game->mark_board(4);
+    game->game_over();
+    game->mark_board(1);
+    game->game_over();
+    game->mark_board(7);
+    game->game_over();
+    game->mark_board(2);
+    game->game_over();
+    game->mark_board(10);
+    game->game_over();
+    game->mark_board(3);
+    game->game_over();
+    game->mark_board(13);
+    game->game_over();
+
+    string winner = game->get_winner();
+
+    REQUIRE(game->game_over() == true);
+    REQUIRE(winner == "X");
+}
+
+
+TEST_CASE("Verify TicTacToeManager class with 3 played games for 4x4")
+{
+    unique_ptr<TicTacToe> game1 = make_unique<TicTacToe4>();
+    TicTacToeManager manager;
+    int x_wins = 0;
+    int o_wins = 0;
+    int ties = 0;
+
+    game1->start_game("X");
+
+
+    game1->mark_board(1);
+    game1->game_over();
+    game1->mark_board(2);
+    game1->game_over();
+    game1->mark_board(5);
+    game1->game_over();
+    game1->mark_board(6);
+    game1->game_over();
+    game1->mark_board(9);
+    game1->game_over();
+    game1->mark_board(10);
+    game1->game_over();
+    game1->mark_board(13);
+    game1->game_over();
+
+    manager.save_game(game1);
+
+    unique_ptr<TicTacToe> game2 = make_unique<TicTacToe4>();
+
+    game2->start_game("O");
+
+    game2->mark_board(1);
+    game2->game_over();
+    game2->mark_board(2);
+    game2->game_over();
+    game2->mark_board(5);
+    game2->game_over();
+    game2->mark_board(6);
+    game2->game_over();
+    game2->mark_board(9);
+    game2->game_over();
+    game2->mark_board(10);
+    game2->game_over();
+    game2->mark_board(13);
+    game2->game_over();
+
+    manager.save_game(game2);
+
+    unique_ptr<TicTacToe> game3 = make_unique<TicTacToe4>();
+
+    game3->start_game("X");
+
+    game3->mark_board(1);
+    game3->game_over();
+    game3->mark_board(2);
+    game3->game_over();
+    game3->mark_board(3);
+    game3->game_over();
+    game3->mark_board(4);
+    game3->game_over();
+    game3->mark_board(6);
+    game3->game_over();
+    game3->mark_board(5);
+    game3->game_over();
+    game3->mark_board(7);
+    game3->game_over();
+    game3->mark_board(10);
+    game3->game_over();
+    game3->mark_board(8);
+    game3->game_over();
+    game3->mark_board(12);
+    game3->game_over();
+    game3->mark_board(9);
+    game3->game_over();
+    game3->mark_board(13);
+    game3->game_over();
+    game3->mark_board(11);
+    game3->game_over();
+    game3->mark_board(15);
+    game3->game_over();
+    game3->mark_board(14);
+    game3->game_over();
+    game3->mark_board(16);
+    game3->game_over();
 
     game3->game_over();
     manager.save_game(game3);

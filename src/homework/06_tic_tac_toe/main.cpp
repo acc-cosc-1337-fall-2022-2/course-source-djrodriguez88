@@ -54,11 +54,18 @@ int main()
             cin >> *game;
         }
         while (!game->game_over());
-        game->game_over();
-        cout << *game;
 
         manager.save_game(game);
 
+        int x, o, t;
+        manager.get_winner_totals(x,o,t);
+        cout << "\nX Wins: " << x << "\n";
+        cout << "O Wins: " << o << "\n";
+        cout << "Ties: " << t << "\n";
+
+
+
+/*
         if (game->get_winner() == "C")
         {
             cout << "\nThe game has ended in a draw! Settle the score and play another round!\n";
@@ -66,14 +73,9 @@ int main()
         else
         {
             cout << "The Winner of the game is " << game->get_winner() << "!\n";
-        }
+        }*/
         cout << "Would you like to play again?\nPress 1: Yes\nPress 0: No\n";
         cin >> contPlay;
-        if(contPlay == 1)
-        {
-            cout << "Player 1: Please choose X or O to begin\n";
-            cin >> first_player;
-        }
     }
 //End Game
     cout << manager;
