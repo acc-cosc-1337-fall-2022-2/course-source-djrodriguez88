@@ -7,8 +7,16 @@ and display them to screen.
 Program continues until user decides to exit.
 
 */
-int main() 
-{
 
-	return 0;
+#include <func.h>
+#include <iostream>
+
+using   std::cout,
+        std::cin;
+int main()
+{
+    main_menu();
+    cout << "Program Terminated";
+
+    return 0;
 }
